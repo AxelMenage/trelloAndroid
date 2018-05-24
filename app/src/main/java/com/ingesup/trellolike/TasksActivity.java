@@ -1,6 +1,5 @@
 package com.ingesup.trellolike;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -42,10 +41,6 @@ public class TasksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
-        Intent intent = getIntent();
-        String boardId = intent.getStringExtra("boardId");
-        Log.d("MESSAGE", boardId);
-        this.boardId = boardId;
         mTextMessage = (TextView) findViewById(R.id.message);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

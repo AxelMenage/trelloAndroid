@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity
     private String username;
     private String key;
     private String token;
-
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        SharedPreferences prefs = getSharedPreferences("user", MODE_PRIVATE);
+        prefs = getSharedPreferences("user", MODE_PRIVATE);
         username = prefs.getString("trello_username", "");
         key = prefs.getString("trello_key", "");
         token = prefs.getString("trello_token", "");
@@ -80,7 +80,9 @@ public class HomeActivity extends AppCompatActivity
                         public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
                             Board currentItem = boards.get(position);
                             Intent intent = new Intent(getApplicationContext(), TasksActivity.class);
-                            intent.putExtra("boardId",currentItem.getId());
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.putString("boardId",currentItem.getId());
+                            editor.apply();
                             startActivity(intent);
                             finish();
                         }
@@ -98,7 +100,7 @@ public class HomeActivity extends AppCompatActivity
     }
 
     public void setNavigationUserInfos(){
-        
+
     }
 
     @Override
@@ -127,6 +129,9 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this,ProfileActivity.class);
+            this.startActivity(intent);
+            finish();
             return true;
         }
 

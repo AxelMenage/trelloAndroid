@@ -1,7 +1,6 @@
 package com.ingesup.trellolike;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ public class TaskAdapter extends ArrayAdapter<Card> {
     public TaskAdapter(Context context, List<Card> objects) {
         super(context, 0, objects);
         tasks = objects;
-        Log.w("TASK:", String.valueOf(tasks.size()));
     }
 
     @Override

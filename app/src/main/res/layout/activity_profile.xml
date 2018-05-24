@@ -14,7 +14,7 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-        <ImageView android:src=""
+        <ImageView android:src="@drawable/logo_trello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User"
+            android:text="Profile"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="24dp"/>
@@ -76,22 +76,10 @@
             android:padding="12dp"
             android:text="@string/update_profile_button"/>
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/complete_profile_text1"
-            android:textSize="14dp"/>
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/complete_profile_text2"
-            android:textSize="14dp" />
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:text="@string/signout_button"
             android:id="@+id/btn_signout"
             android:background="@color/colorSignout"></android.support.v7.widget.AppCompatButton>
